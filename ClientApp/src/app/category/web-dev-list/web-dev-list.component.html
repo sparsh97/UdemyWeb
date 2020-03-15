@@ -1,0 +1,57 @@
+<!-- <p *ngIf="!(courses$ | async)"><em>Loading...</em></p>
+<table class="table table-sm table-hover" *ngIf="(courses$ | async)?.length>0">
+<thead>
+  <tr>
+  <th>#</th>
+  <th>Title</th>
+  <th>Description</th>
+  </tr>
+</thead>
+  <tbody>
+    <tr *ngFor="let course of (courses$ | async)">
+    <td>{{ course.CourseId }}</td>
+    <td>{{course.CourseName}}</td>
+    <td>{{course.CourseDescription}}</td>
+    </tr>
+  </tbody>
+</table>
+     -->
+<!-- 
+     <ul class="course_list" *ngIf="course.length">
+       <li  *ngFor="let c of course; let i=index">
+         {{c.CourseDescription}}
+       </li>
+     </ul> -->
+
+<!-- 
+     <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thead>
+      <ng-container *ngIf="course.length">
+        <tbody *ngFor="let doc of course; let i = index">
+          <tr>
+            <td>{{doc.courseName}}</td>
+            <td>{{doc.courseDescription}}</td>
+          </tr>
+        </tbody>
+      </ng-container>
+    </table> -->
+
+    <ng-container *ngIf="course.length">
+      <div *ngFor="let doc of course; let i=index">
+      <div class="card text-center">
+        <div class="card-header">
+          Web Devlopment
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{doc.courseName}}</h5>
+          <p class="card-text">{{doc.courseDescription}}</p>
+          <a href="#" class="btn btn-primary" routerLink="/web">Start Course</a>
+        </div>
+      </div>
+    </div>
+    </ng-container>
