@@ -1,6 +1,15 @@
-<iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/Y1BlT4_c_SU" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-</iframe>
+<div class="container cntr">
+    <div class="row">
+        <ng-container *ngFor="let vid of videos">
+        <iframe width="560" height="315" 
+        [src]="vid | safeurl"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        >
+        </iframe>
+        </ng-container>
+    </div>
+</div>
+
+<!-- <div class="container">
+    <iframe [src]="urlSafe" frameborder="0" width="100%" height="100%"></iframe>
+</div> -->

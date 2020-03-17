@@ -17,8 +17,16 @@ import {ServicesService} from '../app/services.service';
 import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule, MatIconModule, MatButtonModule, MatCardModule, MatTableModule, MatDividerModule, MatSnackBarModule } from '@angular/material';
 import { VideosComponent } from './videos/videos.component';
 import { WebComponent } from './videos/web/web.component';
-//import { BusinessListComponent } from './category/business-list/business-list.component';
-//import { GamingListComponent } from './category/gaming-list/gaming-list.component';
+import { GamingListComponent } from './category/gaming-list/gaming-list.component';
+import {SafePipe} from '../app/videos/web/custome.pipe';
+import {HtmlComponent} from './videos/html.component';
+import {CssComponent} from '../app/videos/css.component';
+import {SqlComponent} from './videos/sql.component';
+import {UnrealComponent} from './videos/unreal.component';
+import {SigninComponent} from '../app/auth/signin/signin.component';
+import {SignupComponent} from '../app/auth/signup/signup.component';
+import { AuthService } from './auth/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,9 +40,15 @@ import { WebComponent } from './videos/web/web.component';
     CardComponent,
     WebDevListComponent,
     VideosComponent,
-    WebComponent
-    //BusinessListComponent,
-    //GamingListComponent
+    WebComponent,
+    GamingListComponent,
+    SafePipe,
+    HtmlComponent,
+    CssComponent,
+    SqlComponent,
+    UnrealComponent,
+    SigninComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +58,7 @@ import { WebComponent } from './videos/web/web.component';
     ReactiveFormsModule,
     MatToolbarModule, MatFormFieldModule, MatInputModule, MatOptionModule, MatSelectModule, MatIconModule, MatButtonModule, MatCardModule, MatTableModule, MatDividerModule, MatSnackBarModule
   ],
-  providers: [ServicesService],
+  providers: [ServicesService,AuthService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

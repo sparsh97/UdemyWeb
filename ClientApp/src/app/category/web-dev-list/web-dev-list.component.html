@@ -41,17 +41,34 @@
       </ng-container>
     </table> -->
 
-    <ng-container *ngIf="course.length">
+    <!-- <ng-container *ngIf="course.length">
       <div *ngFor="let doc of course; let i=index">
       <div class="card text-center">
         <div class="card-header">
-          Web Devlopment
+          Free Courses
         </div>
-        <div class="card-body">
+        <img src="{{doc.imageUrl}}" class="card-img-top">
+          <div class="card-body">
           <h5 class="card-title">{{doc.courseName}}</h5>
           <p class="card-text">{{doc.courseDescription}}</p>
+          <p class="class-text font-weight-bold"><del><span>&#36;</span>{{doc.price}}</del></p>
           <a href="#" class="btn btn-primary" routerLink="/web">Start Course</a>
         </div>
       </div>
     </div>
-    </ng-container>
+    </ng-container> -->
+
+    <ng-container *ngIf="course.length" class="cntr">
+      <div *ngFor="let doc of course; let i=index" class="cntr">
+    <div class="card text-center" style="width: 18rem;">
+      <img src="{{doc.imageUrl}}" class="card-img-top w-50 m-auto" alt="HTML5">
+      <div class="card-body">
+        <h5 class="card-title text-center">{{doc.courseName}}</h5>
+        <p class="card-text text-center">{{doc.courseDescription}}</p>
+        <p class="class-text font-weight-bold"><del><span>&#36;</span>{{doc.price}}</del></p>
+        <a href="#" class="btn btn-primary text-center" routerLink="/web">Start Course</a>
+      </div>
+    </div>
+    </div>
+    </ng-container> 
+

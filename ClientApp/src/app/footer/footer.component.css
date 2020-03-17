@@ -1,0 +1,8 @@
+footer {
+    height: 50px;
+    transition-duration:0.300s;
+}
+
+footer:hover{
+    height: 100px;
+}

@@ -32,7 +32,9 @@ export class ServicesService {
   public fetchCourses(){
     return this.http.get<Courses[]>(`${this.uri}/Courses`);
   }
-
+  public fetchCourse(CourseId){
+    return this.http.get<Courses[]>(`${this.uri}/Courses/${CourseId}`)
+  }
 
   errorHandler(error) {
     let errorMessage = '';
